@@ -1,8 +1,219 @@
---CREATE DATABASE Proyecto_V1
---GO
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('AREA') and o.name = 'FK_AREA_REFERENCE_PUESTO')
+alter table AREA
+   drop constraint FK_AREA_REFERENCE_PUESTO
+go
 
-USE PROYECTO_V1
-GO
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('CALCULOS_CN') and o.name = 'FK_CALCULOS_REFERENCE_MESES')
+alter table CALCULOS_CN
+   drop constraint FK_CALCULOS_REFERENCE_MESES
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('CALCULOS_CN') and o.name = 'FK_CALCULOS_REFERENCE_NOMINA')
+alter table CALCULOS_CN
+   drop constraint FK_CALCULOS_REFERENCE_NOMINA
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('CALCULOS_CN') and o.name = 'FK_CALCULOS_REFERENCE_CONCEPTO')
+alter table CALCULOS_CN
+   drop constraint FK_CALCULOS_REFERENCE_CONCEPTO
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('CONCEPTOS') and o.name = 'FK_CONCEPTO_REFERENCE_CONCEPTO')
+alter table CONCEPTOS
+   drop constraint FK_CONCEPTO_REFERENCE_CONCEPTO
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('CONCEPTOS') and o.name = 'FK_CONCEPTO_REFERENCE_CONCEPTO')
+alter table CONCEPTOS
+   drop constraint FK_CONCEPTO_REFERENCE_CONCEPTO
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('CONCEPTO_NOMINA') and o.name = 'FK_CONCEPTO_REFERENCE_EMPLEADO')
+alter table CONCEPTO_NOMINA
+   drop constraint FK_CONCEPTO_REFERENCE_EMPLEADO
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('CONCEPTO_NOMINA') and o.name = 'FK_CONCEPTO_REFERENCE_NOMINA')
+alter table CONCEPTO_NOMINA
+   drop constraint FK_CONCEPTO_REFERENCE_NOMINA
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('EMPLEADOS') and o.name = 'FK_EMPLEADO_REFERENCE_DEPARTAM')
+alter table EMPLEADOS
+   drop constraint FK_EMPLEADO_REFERENCE_DEPARTAM
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('EMPLEADOS') and o.name = 'FK_EMPLEADO_REFERENCE_MARCACIO')
+alter table EMPLEADOS
+   drop constraint FK_EMPLEADO_REFERENCE_MARCACIO
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('EMPLEADOS') and o.name = 'FK_EMPLEADO_REFERENCE_ESTADO_E')
+alter table EMPLEADOS
+   drop constraint FK_EMPLEADO_REFERENCE_ESTADO_E
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('EMPLEADOS') and o.name = 'FK_EMPLEADO_REFERENCE_AREA')
+alter table EMPLEADOS
+   drop constraint FK_EMPLEADO_REFERENCE_AREA
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('EMPLEADOS') and o.name = 'FK_EMPLEADO_REFERENCE_PUESTO')
+alter table EMPLEADOS
+   drop constraint FK_EMPLEADO_REFERENCE_PUESTO
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('EMPLEADOS') and o.name = 'FK_EMPLEADO_REFERENCE_NOMINA')
+alter table EMPLEADOS
+   drop constraint FK_EMPLEADO_REFERENCE_NOMINA
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('EMPLEADOS') and o.name = 'FK_EMPLEADO_REFERENCE_EMPLEADO')
+alter table EMPLEADOS
+   drop constraint FK_EMPLEADO_REFERENCE_EMPLEADO
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('NOMINA_BANCO') and o.name = 'FK_NOMINA_B_REFERENCE_NOMINA')
+alter table NOMINA_BANCO
+   drop constraint FK_NOMINA_B_REFERENCE_NOMINA
+go
+
+if exists (select 1
+   from sys.sysreferences r join sys.sysobjects o on (o.id = r.constid and o.type = 'F')
+   where r.fkeyid = object_id('NOMINA_BANCO') and o.name = 'FK_NOMINA_B_REFERENCE_EMPLEADO')
+alter table NOMINA_BANCO
+   drop constraint FK_NOMINA_B_REFERENCE_EMPLEADO
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('AREA')
+            and   type = 'U')
+   drop table AREA
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('CALCULOS_CN')
+            and   type = 'U')
+   drop table CALCULOS_CN
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('CONCEPTOS')
+            and   type = 'U')
+   drop table CONCEPTOS
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('CONCEPTO_FORMULA')
+            and   type = 'U')
+   drop table CONCEPTO_FORMULA
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('CONCEPTO_NOMINA')
+            and   type = 'U')
+   drop table CONCEPTO_NOMINA
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('DEPARTAMENTO')
+            and   type = 'U')
+   drop table DEPARTAMENTO
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('EMPLEADOS')
+            and   type = 'U')
+   drop table EMPLEADOS
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('EMPLEADO_CONCEPTO')
+            and   type = 'U')
+   drop table EMPLEADO_CONCEPTO
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('ESTADO_EMPLEADO')
+            and   type = 'U')
+   drop table ESTADO_EMPLEADO
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('MARCACIONES')
+            and   type = 'U')
+   drop table MARCACIONES
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('MESES')
+            and   type = 'U')
+   drop table MESES
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('NOMINA')
+            and   type = 'U')
+   drop table NOMINA
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('NOMINA_BANCO')
+            and   type = 'U')
+   drop table NOMINA_BANCO
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('PUESTO')
+            and   type = 'U')
+   drop table PUESTO
+go
 
 /*==============================================================*/
 /* Table: AREA                                                  */
@@ -185,4 +396,89 @@ create table PUESTO (
    AREA                 varchar(10)          null,
    constraint PK_PUESTO primary key (ID_PUESTO)
 )
+go
+
+alter table AREA
+   add constraint FK_AREA_REFERENCE_PUESTO foreign key (ID_PUESTO)
+      references PUESTO (ID_PUESTO)
+go
+
+alter table CALCULOS_CN
+   add constraint FK_CALCULOS_REFERENCE_MESES foreign key (MES)
+      references MESES (MES)
+go
+
+alter table CALCULOS_CN
+   add constraint FK_CALCULOS_REFERENCE_NOMINA foreign key (ID_NOMINA)
+      references NOMINA (ID_NOMINA)
+go
+
+alter table CALCULOS_CN
+   add constraint FK_CALCULOS_REFERENCE_CONCEPTO foreign key (CONCEPTO)
+      references CONCEPTOS (CONCEPTO)
+go
+
+alter table CONCEPTOS
+   add constraint FK_CONCEPTO_REFERENCE_CONCEPTO foreign key (CON_CONCEPTO, SECUENCIA)
+      references CONCEPTO_FORMULA (CONCEPTO, SECUENCIA)
+go
+
+alter table CONCEPTOS
+   add constraint FK_CONCEPTO_REFERENCE_CONCEPTO foreign key (CONCEPTO, ID_NOMINA)
+      references CONCEPTO_NOMINA (CONCEPTO, ID_NOMINA)
+go
+
+alter table CONCEPTO_NOMINA
+   add constraint FK_CONCEPTO_REFERENCE_EMPLEADO foreign key (ID_EMPLEADO, CONCEPTO)
+      references EMPLEADO_CONCEPTO (ID_EMPLEADO, CONCEPTO)
+go
+
+alter table CONCEPTO_NOMINA
+   add constraint FK_CONCEPTO_REFERENCE_NOMINA foreign key (ID_NOMINA)
+      references NOMINA (ID_NOMINA)
+go
+
+alter table EMPLEADOS
+   add constraint FK_EMPLEADO_REFERENCE_DEPARTAM foreign key (ID_DEPART)
+      references DEPARTAMENTO (ID_DEPART)
+go
+
+alter table EMPLEADOS
+   add constraint FK_EMPLEADO_REFERENCE_MARCACIO foreign key (ID_MARCACION)
+      references MARCACIONES (ID_MARCACION)
+go
+
+alter table EMPLEADOS
+   add constraint FK_EMPLEADO_REFERENCE_ESTADO_E foreign key (ID_ESTADO)
+      references ESTADO_EMPLEADO (ID_ESTADO)
+go
+
+alter table EMPLEADOS
+   add constraint FK_EMPLEADO_REFERENCE_AREA foreign key (AREA)
+      references AREA (AREA)
+go
+
+alter table EMPLEADOS
+   add constraint FK_EMPLEADO_REFERENCE_PUESTO foreign key (ID_PUESTO)
+      references PUESTO (ID_PUESTO)
+go
+
+alter table EMPLEADOS
+   add constraint FK_EMPLEADO_REFERENCE_NOMINA foreign key (ID_NOMINA)
+      references NOMINA (ID_NOMINA)
+go
+
+alter table EMPLEADOS
+   add constraint FK_EMPLEADO_REFERENCE_EMPLEADO foreign key (ID_EMPLEADO, CONCEPTO)
+      references EMPLEADO_CONCEPTO (ID_EMPLEADO, CONCEPTO)
+go
+
+alter table NOMINA_BANCO
+   add constraint FK_NOMINA_B_REFERENCE_NOMINA foreign key (ID_NOMINA)
+      references NOMINA (ID_NOMINA)
+go
+
+alter table NOMINA_BANCO
+   add constraint FK_NOMINA_B_REFERENCE_EMPLEADO foreign key (ID_EMPLEADO)
+      references EMPLEADOS (ID_EMPLEADO)
 go
