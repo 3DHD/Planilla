@@ -1,0 +1,9 @@
+c:\users\jesusvasquez\documents\visual studio 2012\Projects\ModuloPlanilla\Empleados\bin\Debug\Empleados.exe.config
+c:\users\jesusvasquez\documents\visual studio 2012\Projects\ModuloPlanilla\Empleados\bin\Debug\Empleados.exe
+c:\users\jesusvasquez\documents\visual studio 2012\Projects\ModuloPlanilla\Empleados\bin\Debug\Empleados.pdb
+c:\users\jesusvasquez\documents\visual studio 2012\Projects\ModuloPlanilla\Empleados\obj\Debug\Empleados.csprojResolveAssemblyReference.cache
+c:\users\jesusvasquez\documents\visual studio 2012\Projects\ModuloPlanilla\Empleados\obj\Debug\Empleados.Form1.resources
+c:\users\jesusvasquez\documents\visual studio 2012\Projects\ModuloPlanilla\Empleados\obj\Debug\Empleados.Properties.Resources.resources
+c:\users\jesusvasquez\documents\visual studio 2012\Projects\ModuloPlanilla\Empleados\obj\Debug\Empleados.csproj.GenerateResource.Cache
+c:\users\jesusvasquez\documents\visual studio 2012\Projects\ModuloPlanilla\Empleados\obj\Debug\Empleados.exe
+c:\users\jesusvasquez\documents\visual studio 2012\Projects\ModuloPlanilla\Empleados\obj\Debug\Empleados.pdb
